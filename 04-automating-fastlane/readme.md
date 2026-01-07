@@ -3,7 +3,7 @@
 name: Android Fastlane Firebase App Distribution Workflow
 on:
   push:
-    branches: [main, master]
+    branches: main
   workflow_dispatch:
 
 jobs:
@@ -60,10 +60,10 @@ jobs:
             release_notes = sh("git log -1 --pretty=%B").strip
             
             firebase_app_distribution(
-              app: "1:550549398462:android:7cd28669c72c459c5f0fef",
+              app: "",
               android_artifact_type: "APK",
               android_artifact_path: "../build/app/outputs/flutter-apk/app-release.apk",
-              testers: "m7mdmakenstudy@gmail.com" ,
+              testers: "" ,
               release_notes: release_notes,
               upload_timeout: 600
             )
